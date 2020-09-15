@@ -1,13 +1,16 @@
-import { RelayEnvironmentProvider } from 'relay-hooks'
+import { ChakraProvider } from "@chakra-ui/core";
+import { RelayEnvironmentProvider } from "relay-hooks";
 
-import { createEnvironment } from '../lib/createEnvironment'
+import { createEnvironment } from "../lib/createEnvironment";
 
 export default function App({ Component, pageProps }) {
   return (
     <RelayEnvironmentProvider
       environment={createEnvironment(pageProps.relayData)}
     >
-      <Component {...pageProps} />
+      <ChakraProvider resetCSS>
+        <Component {...pageProps} />
+      </ChakraProvider>
     </RelayEnvironmentProvider>
-  )
+  );
 }
