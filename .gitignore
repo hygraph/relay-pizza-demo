@@ -34,5 +34,5 @@ yarn-error.log*
 .vercel
 
 # relay
-__generated__/
-schema/schema.graphql
+#__generated__/
+#schema/schema.graphql
