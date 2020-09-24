@@ -7,9 +7,7 @@ import Pizzas from "../components/Pizzas";
 
 const query = graphql`
   query pages_Query {
-    pizzasConnection {
-      ...Pizzas_pizza
-    }
+    ...Pizzas_pizzas
   }
 `;
 
@@ -22,7 +20,7 @@ const Index = ({ environment }) => {
 
   return (
     <Container>
-      <Pizzas pizza={props.pizzasConnection} />
+      <Pizzas pizzas={props} />
     </Container>
   );
 };
